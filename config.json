@@ -4,8 +4,8 @@
             "taskSpec": {
                 "runnables": [
                     {
-                        "script": {
-                            "text": "bash /mnt/share/code/runner.sh"
+                        "container": {
+                            "imageUri": "europe-west1-docker.pkg.dev/open-targets-genetics-dev/gentropy-app-dev/gentropy_test"
                         }
                     }
                 ],
@@ -13,14 +13,6 @@
                     "cpuMilli": 1000,
                     "memoryMib": 6000
                 },
-                "volumes": [
-                    {
-                        "gcs": {
-                            "remotePath": "gentropy-tmp/batch-example"
-                        },
-                        "mountPath": "/mnt/share"
-                    }
-                ],
                 "maxRetryCount": 1,
                 "maxRunDuration": "3600s"
             },
